@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Connect 4</title>
+    <link rel="icon" href="https://www.wnewsj.com/wp-content/uploads/2022/01/web1_Connect-4.jpg" type="image/icon type">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="script.js"></script>
+    </head>
+  <body>
+    <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <div class="card" id="principalCard">
+            <div class="card-body d-flex flex-column min-vh-100 justify-content-center align-items-center">
+                <h1 class="card-title">Connect 4</h1><br>
+                <table class="table-bordered" id="boardGame">
+                    <tr>
+                        <td style="width: 120px; height: 75px" id="11" onclick="pressCell(11)"><div class="circle" id="circle11"></div></td>
+                        <td style="width: 120px; height: 75px" id="12" onclick="pressCell(12)"><div class="circle" id="circle12"></div></td>
+                        <td style="width: 120px; height: 75px" id="13" onclick="pressCell(13)"><div class="circle" id="circle13"></div></td>
+                        <td style="width: 120px; height: 75px" id="14" onclick="pressCell(14)"><div class="circle" id="circle14"></div></td>
+                        <td style="width: 120px; height: 75px" id="15" onclick="pressCell(15)"><div class="circle" id="circle15"></div></td>
+                        <td style="width: 120px; height: 75px" id="16" onclick="pressCell(16)"><div class="circle" id="circle16"></div></td>
+                        <td style="width: 120px; height: 75px" id="17" onclick="pressCell(17)"><div class="circle" id="circle17"></div></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 120px; height: 75px" id="21" onclick="pressCell(21)"><div class="circle" id="circle21"></div></td>
+                        <td style="width: 120px; height: 75px" id="22" onclick="pressCell(22)"><div class="circle" id="circle22"></div></td>
+                        <td style="width: 120px; height: 75px" id="23" onclick="pressCell(23)"><div class="circle" id="circle23"></div></td>
+                        <td style="width: 120px; height: 75px" id="24" onclick="pressCell(24)"><div class="circle" id="circle24"></div></td>
+                        <td style="width: 120px; height: 75px" id="25" onclick="pressCell(25)"><div class="circle" id="circle25"></div></td>
+                        <td style="width: 120px; height: 75px" id="26" onclick="pressCell(26)"><div class="circle" id="circle26"></div></td>
+                        <td style="width: 120px; height: 75px" id="27" onclick="pressCell(27)"><div class="circle" id="circle27"></div></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 120px; height: 75px" id="31" onclick="pressCell(31)"><div class="circle" id="circle31"></div></td>
+                        <td style="width: 120px; height: 75px" id="32" onclick="pressCell(32)"><div class="circle" id="circle32"></div></td>
+                        <td style="width: 120px; height: 75px" id="33" onclick="pressCell(33)"><div class="circle" id="circle33"></div></td>
+                        <td style="width: 120px; height: 75px" id="34" onclick="pressCell(34)"><div class="circle" id="circle34"></div></td>
+                        <td style="width: 120px; height: 75px" id="35" onclick="pressCell(35)"><div class="circle" id="circle35"></div></td>
+                        <td style="width: 120px; height: 75px" id="36" onclick="pressCell(36)"><div class="circle" id="circle36"></div></td>
+                        <td style="width: 120px; height: 75px" id="37" onclick="pressCell(37)"><div class="circle" id="circle37"></div></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 120px; height: 75px" id="41" onclick="pressCell(41)"><div class="circle" id="circle41"></div></td>
+                        <td style="width: 120px; height: 75px" id="42" onclick="pressCell(42)"><div class="circle" id="circle42"></div></td>
+                        <td style="width: 120px; height: 75px" id="43" onclick="pressCell(43)"><div class="circle" id="circle43"></div></td>
+                        <td style="width: 120px; height: 75px" id="44" onclick="pressCell(44)"><div class="circle" id="circle44"></div></td>
+                        <td style="width: 120px; height: 75px" id="45" onclick="pressCell(45)"><div class="circle" id="circle45"></div></td>
+                        <td style="width: 120px; height: 75px" id="46" onclick="pressCell(46)"><div class="circle" id="circle46"></div></td>
+                        <td style="width: 120px; height: 75px" id="47" onclick="pressCell(47)"><div class="circle" id="circle47"></div></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 120px; height: 75px" id="51" onclick="pressCell(51)"><div class="circle" id="circle51"></div></td>
+                        <td style="width: 120px; height: 75px" id="52" onclick="pressCell(52)"><div class="circle" id="circle52"></div></td>
+                        <td style="width: 120px; height: 75px" id="53" onclick="pressCell(53)"><div class="circle" id="circle53"></div></td>
+                        <td style="width: 120px; height: 75px" id="54" onclick="pressCell(54)"><div class="circle" id="circle54"></div></td>
+                        <td style="width: 120px; height: 75px" id="55" onclick="pressCell(55)"><div class="circle" id="circle55"></div></td>
+                        <td style="width: 120px; height: 75px" id="56" onclick="pressCell(56)"><div class="circle" id="circle56"></div></td>
+                        <td style="width: 120px; height: 75px" id="57" onclick="pressCell(57)"><div class="circle" id="circle57"></div></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 120px; height: 75px" id="61" onclick="pressCell(61)"><div class="circle" id="circle61"></div></td>
+                        <td style="width: 120px; height: 75px" id="62" onclick="pressCell(62)"><div class="circle" id="circle62"></div></td>
+                        <td style="width: 120px; height: 75px" id="63" onclick="pressCell(63)"><div class="circle" id="circle63"></div></td>
+                        <td style="width: 120px; height: 75px" id="64" onclick="pressCell(64)"><div class="circle" id="circle64"></div></td>
+                        <td style="width: 120px; height: 75px" id="65" onclick="pressCell(65)"><div class="circle" id="circle65"></div></td>
+                        <td style="width: 120px; height: 75px" id="66" onclick="pressCell(66)"><div class="circle" id="circle66"></div></td>
+                        <td style="width: 120px; height: 75px" id="67" onclick="pressCell(67)"><div class="circle" id="circle67"></div></td>
+                    </tr>
+                </table><br>
+                <p id="message"></p>
+                <div id="refreshButton"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
