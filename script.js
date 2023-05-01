@@ -111,7 +111,7 @@ function diagonalCross(row, column) {
 }
 
 
-function fromLeftToRightYellow(row, column, countYellowLeftDisks, countRedLeftDisks) {
+function fromLeftToRight(row, column, countYellowLeftDisks, countRedLeftDisks) {
     const sameColor = {val: true};
     for (let i = column; i <= 7 && sameColor.val == true; ++i) {
         let circle = document.getElementById('circle' + (row * 10 + i) + '');
@@ -122,7 +122,7 @@ function fromLeftToRightYellow(row, column, countYellowLeftDisks, countRedLeftDi
     }
 }
 
-function fromRightToLeftYellow(row, column, countYellowRightDisks, countRedRightDisks) {
+function fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks) {
     const sameColor = {val: true};
     for (let i = column; i >= 1 && sameColor.val == true; --i) {
         let circle = document.getElementById('circle' + (row * 10 + i) + '');
@@ -136,8 +136,8 @@ function fromRightToLeftYellow(row, column, countYellowRightDisks, countRedRight
 function orizontalCross(row, column) {
     let totalYellowDisks = 0, totalRedDisks = 0;
     const countRedLeftDisks = {val: 0}, countRedRightDisks = {val: 0}, countYellowLeftDisks = {val: 0}, countYellowRightDisks = {val: 0};
-    fromLeftToRightYellow(row, column, countYellowLeftDisks, countRedLeftDisks);
-    fromRightToLeftYellow(row, column, countYellowRightDisks, countRedRightDisks);
+    fromLeftToRight(row, column, countYellowLeftDisks, countRedLeftDisks);
+    fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks);
     totalYellowDisks = countYellowLeftDisks.val + countYellowRightDisks.val;
     totalRedDisks = countRedLeftDisks.val + countRedRightDisks.val;
     if (totalYellowDisks == 3) {
