@@ -71,7 +71,7 @@ function fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countR
 
 function fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks) {
     const sameColor = {val: true};
-    for (let i = row, j = column; i <= 6 && j <= 7 && sameColor == true; ++i, ++j) {
+    for (let i = row, j = column; i <= 6 && j <= 7 && sameColor.val == true; ++i, ++j) {
         let circle = document.getElementById('circle' + (i * 10 + j) + '');
         if (i + 1 <= 6 && j + 1 <= 7) {
             let neighbour = document.getElementById('circle' + ((i + 1) * 10 + (j + 1)) + '');
