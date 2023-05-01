@@ -54,7 +54,6 @@ function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countR
             compare(circle, neighbour, countYellowSouthWestDisks, countRedSouthWestDisks, sameColor);
         }
     }
-    console.log(countRedSouthWestDisks, countYellowSouthWestDisks);
 }
 
 function fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks) {
@@ -66,7 +65,6 @@ function fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countR
             compare(circle, neighbour, countYellowNorthEastDisks, countRedNorthEastDisks, sameColor);
         }
     }
-    console.log(countRedNorthEastDisks.val, countYellowNorthEastDisks.val);
 }
 
 function fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks) {
@@ -78,7 +76,6 @@ function fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countR
             compare(circle, neighbour, countYellowSouthEastDisks, countRedSouthEastDisks, sameColor);
         }
     }
-    console.log(countYellowSouthEastDisks.val, countRedSouthEastDisks.val);
 }
 
 function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks) {
@@ -90,7 +87,6 @@ function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countR
             compare(circle, neighbour, countYellowNorthWestDisks, countRedNorthWestDisks, sameColor);
         }
     }
-    console.log(countRedNorthWestDisks.val, countYellowNorthWestDisks.val);
 }
 
 function diagonalCross(row, column) {
@@ -105,10 +101,6 @@ function diagonalCross(row, column) {
     totalLeftToRightRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
     totalRightToLeftYellowDisks = countYellowNorthWestDisks.val + countYellowSouthEastDisks.val;
     totalRightToLeftRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;
-    /*console.log(totalLeftToRightRedDisks);
-    console.log(totalLeftToRightYellowDisks);
-    console.log(totalRightToLeftRedDisks);
-    console.log(totalRightToLeftYellowDisks);*/
     if (totalLeftToRightYellowDisks == 3 || totalRightToLeftYellowDisks == 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
