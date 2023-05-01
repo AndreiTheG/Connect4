@@ -76,6 +76,7 @@ function fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countR
             compare(circle, neighbour, countYellowSouthEastDisks, countRedSouthEastDisks, sameColor);
         }
     }
+    console.log(countYellowSouthEastDisks, countRedSouthEastDisks);
 }
 
 function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks) {
@@ -87,6 +88,7 @@ function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countR
             compare(circle, neighbour, countYellowNorthWestDisks, countRedNorthWestDisks, sameColor);
         }
     }
+    console.log(countRedNorthWestDisks, countYellowNorthWestDisks);
 }
 
 function diagonalCross(row, column) {
@@ -101,10 +103,10 @@ function diagonalCross(row, column) {
     totalLeftToRightRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
     totalRightToLeftYellowDisks = countYellowNorthWestDisks.val + countYellowSouthEastDisks.val;
     totalRightToLeftRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;
-    console.log(totalLeftToRightRedDisks);
+    /*console.log(totalLeftToRightRedDisks);
     console.log(totalLeftToRightYellowDisks);
     console.log(totalRightToLeftRedDisks);
-    console.log(totalRightToLeftYellowDisks);
+    console.log(totalRightToLeftYellowDisks);*/
     if (totalLeftToRightYellowDisks == 3 || totalRightToLeftYellowDisks == 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
