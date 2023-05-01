@@ -162,7 +162,7 @@ function verticalCross(row, column) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
     } else if (countRedDisks.val == 3) {
-        document.getElementById('message').innerHTML = 'The player with red has won!';
+        document.getElementById('message').innerHTML = 'The player with red disks has won!';
         disableOnclick();
     }
 }
