@@ -45,6 +45,17 @@ function compare(currentDisk, neighbour, nrYellowDisks, nrRedDisks, sameColor) {
     }
 }
 
+
+function outputCondition(countYellowDisks, countRedDisks) {
+    if (countYellowDisks == 3) {
+        document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
+        disableOnclick();
+    } else if (countRedDisks == 3) {
+        document.getElementById('message').innerHTML = 'The player with red disks has won!';
+        disableOnclick();
+    }
+}
+
 function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks) {
     const sameColor = {val: true};
     for (let i = row, j = column; i <= 6 && j >= 1 && sameColor.val == true; ++i, --j) {
@@ -158,13 +169,14 @@ function verticalCross(row, column) {
             compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
         }
     }
-    if (countYellowDisks.val == 3) {
+    outputCondition(countYellowDisks.val, countRedDisks.val);
+    /*if (countYellowDisks.val == 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
     } else if (countRedDisks.val == 3) {
         document.getElementById('message').innerHTML = 'The player with red disks has won!';
         disableOnclick();
-    }
+    }*/
 }
 
 function disableOnclick() {
