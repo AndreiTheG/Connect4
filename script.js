@@ -151,13 +151,14 @@ function orizontalCross(row, column) {
     fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks);
     totalYellowDisks = countYellowLeftDisks.val + countYellowRightDisks.val;
     totalRedDisks = countRedLeftDisks.val + countRedRightDisks.val;
-    if (totalYellowDisks == 3) {
+    outputCondition(totalYellowDisks, totalRedDisks);
+    /*if (totalYellowDisks == 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
     } else if (totalRedDisks == 3) {
         document.getElementById('message').innerHTML = 'The player with red disks has won!';
         disableOnclick();
-    }
+    }*/
 }
 
 function verticalCross(row, column) {
