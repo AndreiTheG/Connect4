@@ -112,10 +112,12 @@ function diagonalCross(row, column) {
     totalLeftToRightRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
     totalRightToLeftYellowDisks = countYellowNorthWestDisks.val + countYellowSouthEastDisks.val;
     totalRightToLeftRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;
-    if (totalLeftToRightYellowDisks == 3 || totalRightToLeftYellowDisks == 3) {
+    let totalYellowDisks = totalLeftToRightYellowDisks + totalRightToLeftYellowDisks;
+    let totalRedDisks = totalLeftToRightRedDisks + totalRightToLeftRedDisks;
+    if (totalYellowDisks == 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
-    } else if (totalLeftToRightRedDisks == 3 || totalRightToLeftRedDisks == 3) {
+    } else if (totalRedDisks == 3) {
         document.getElementById('message').innerHTML = 'The player with red disks has won!';
         disableOnclick();
     }
