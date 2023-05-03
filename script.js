@@ -101,17 +101,12 @@ function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countR
 }
 
 function diagonalCross(row, column) {
-    //let totalLeftToRightYellowDisks = 0, totalLeftToRightRedDisks = 0, totalRightToLeftYellowDisks = 0, totalRightToLeftRedDisks = 0;
     const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
     const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
     fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
     fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
     fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks);
     fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks);
-    /*totalLeftToRightYellowDisks = countYellowSouthWestDisks.val + countYellowNorthEastDisks.val;
-    totalLeftToRightRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
-    totalRightToLeftYellowDisks = countYellowNorthWestDisks.val + countYellowSouthEastDisks.val;
-    totalRightToLeftRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;*/
     let totalRedDisks = 0, totalYellowDisks = 0;
     if (countYellowSouthWestDisks.val + countYellowNorthEastDisks.val == 3) {
         totalYellowDisks = countYellowSouthWestDisks.val + countYellowNorthEastDisks.val;
