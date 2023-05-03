@@ -101,7 +101,7 @@ function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countR
 }
 
 function diagonalCross(row, column) {
-    let totalLeftToRightYellowDisks = 0, totalLeftToRightRedDisks = 0, totalRightToLeftYellowDisks = 0, totalRightToLeftRedDisks = 0;
+    //let totalLeftToRightYellowDisks = 0, totalLeftToRightRedDisks = 0, totalRightToLeftYellowDisks = 0, totalRightToLeftRedDisks = 0;
     const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
     const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
     fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
