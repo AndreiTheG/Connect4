@@ -108,29 +108,22 @@ function diagonalCross(row, column) {
     fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
     fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks);
     fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks);
-    totalLeftToRightYellowDisks = countYellowSouthWestDisks.val + countYellowNorthEastDisks.val;
+    /*totalLeftToRightYellowDisks = countYellowSouthWestDisks.val + countYellowNorthEastDisks.val;
     totalLeftToRightRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
     totalRightToLeftYellowDisks = countYellowNorthWestDisks.val + countYellowSouthEastDisks.val;
-    totalRightToLeftRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;
+    totalRightToLeftRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;*/
     let totalRedDisks = 0, totalYellowDisks = 0;
-    if (totalLeftToRightYellowDisks == 3) {
-        totalYellowDisks = totalLeftToRightYellowDisks;
-    } else if (totalRightToLeftYellowDisks == 3) {
-        totalYellowDisks = totalRightToLeftYellowDisks;
+    if (countYellowSouthWestDisks.val + countYellowNorthEastDisks.val == 3) {
+        totalYellowDisks = countYellowSouthWestDisks.val + countYellowNorthEastDisks.val;
+    } else if (countYellowNorthWestDisks.val + countYellowSouthEastDisks.val == 3) {
+        totalYellowDisks = countYellowNorthWestDisks.val + countYellowSouthEastDisks.val;
     }
-    if (totalLeftToRightRedDisks == 3) {
-        totalRedDisks = totalLeftToRightRedDisks;
-    } else if (totalRightToLeftRedDisks == 3) {
-        totalRedDisks = totalRightToLeftRedDisks;
+    if (countRedSouthWestDisks.val + countRedNorthEastDisks.val == 3) {
+        totalRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
+    } else if (countRedNorthWestDisks.val + countRedSouthEastDisks.val == 3) {
+        totalRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;
     }
     outputCondition(totalYellowDisks, totalRedDisks);
-    /*if (totalLeftToRightYellowDisks == 3 || totalRightToLeftYellowDisks == 3) {
-        document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
-        disableOnclick();
-    } else if (totalLeftToRightRedDisks == 3 || totalRightToLeftRedDisks == 3) {
-        document.getElementById('message').innerHTML = 'The player with red disks has won!';
-        disableOnclick();
-    }*/
 }
 
 
