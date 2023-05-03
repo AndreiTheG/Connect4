@@ -94,9 +94,9 @@ function diagonalCross(row, column) {
     const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
     const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
     fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
-    fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
+    //fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
     fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks);
-    fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks);
+    //fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks);
     totalLeftToRightYellowDisks = countYellowSouthWestDisks.val + countYellowNorthEastDisks.val;
     totalLeftToRightRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
     totalRightToLeftYellowDisks = countYellowNorthWestDisks.val + countYellowSouthEastDisks.val;
