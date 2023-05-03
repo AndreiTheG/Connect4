@@ -35,7 +35,7 @@ function compare(currentDisk, neighbour, nrYellowDisks, nrRedDisks, sameColor) {
     let yellow = "rgb(240, 255, 0)";
     let red = "rgb(255, 4, 10)";
     let style1 = currentDisk.computedStyleMap().get('background-color').toString();
-    let style2 = neighbour.computedStyleMap().get('background-color').toString()
+    let style2 = neighbour.computedStyleMap().get('background-color').toString();
     if (style1 == yellow && style1 == style2) {
         ++nrYellowDisks.val;
     } else if (style1 == red && style1 == style2) {
