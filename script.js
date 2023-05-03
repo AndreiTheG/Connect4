@@ -152,13 +152,6 @@ function orizontalCross(row, column) {
     totalYellowDisks = countYellowLeftDisks.val + countYellowRightDisks.val;
     totalRedDisks = countRedLeftDisks.val + countRedRightDisks.val;
     outputCondition(totalYellowDisks, totalRedDisks);
-    /*if (totalYellowDisks == 3) {
-        document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
-        disableOnclick();
-    } else if (totalRedDisks == 3) {
-        document.getElementById('message').innerHTML = 'The player with red disks has won!';
-        disableOnclick();
-    }*/
 }
 
 function verticalCross(row, column) {
@@ -171,13 +164,6 @@ function verticalCross(row, column) {
         }
     }
     outputCondition(countYellowDisks.val, countRedDisks.val);
-    /*if (countYellowDisks.val == 3) {
-        document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
-        disableOnclick();
-    } else if (countRedDisks.val == 3) {
-        document.getElementById('message').innerHTML = 'The player with red disks has won!';
-        disableOnclick();
-    }*/
 }
 
 function disableOnclick() {
