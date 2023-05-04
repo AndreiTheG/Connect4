@@ -57,9 +57,9 @@ function outputCondition(countYellowDisks, countRedDisks) {
 
 function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
    
-    let count1 = 1, count2 = 1;
+    let count1 = 1, count2 = 1, diagonalFound = false;
     const yellow1 = {val: 0}, red1 = {val: 0}, yellow2 = {val: 0}, red2 = {val: 0}, yellow3 = {val: 0}, red3 = {val: 0}, yellow4 = {val: 0}, red4 = {val: 0};
-    for (let step = 1; step <= 4; ++step) {
+    for (let step = 1; step <= 4 && diagonalFound == false; ++step) {
         const sameColor = {val: true};
         let exists = true;
         console.log('Pas' + step);
@@ -93,6 +93,9 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
         console.log(yellow2.val + ' ' + red2.val);
         console.log(yellow3.val + ' ' + red3.val);
         console.log(yellow4.val + ' ' + red4.val);
+        if (yellow1.val + yellow4 == 3 || red1.val + red4.val == 3 || yellow2.val + yellow3.val == 3 || red2.val + red3.val == 3) {
+            diagonalFound = true;
+        }
         if (step % 2 != 0) {
             count2 = -1;
         } else {
