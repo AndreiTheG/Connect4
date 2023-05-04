@@ -168,6 +168,7 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, leftYellowDisks, leftRedDisks, sameColor);
             } else {
+                console.log('False');
                 exists = false;
             }
         }
