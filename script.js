@@ -211,7 +211,7 @@ function verticalCross(row, column) {
             compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
         }
     }
-    outputCondition(countYellowDisks.val, countRedDisks.val);
+    outputCondition(countYellowDisks, countRedDisks);
 }
 
 function disableOnclick() {
