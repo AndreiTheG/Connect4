@@ -155,7 +155,7 @@ function diagonalCross(row, column) {
 }
 
 
-function fromLeftToRight(row, column, countYellowLeftDisks, countRedLeftDisks) {
+/*function fromLeftToRight(row, column, countYellowLeftDisks, countRedLeftDisks) {
     const sameColor = {val: true};
     for (let i = column; i <= 7 && sameColor.val == true; ++i) {
         let circle = document.getElementById('circle' + (row * 10 + i) + '');
@@ -175,15 +175,31 @@ function fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks)
             compare(circle, neighbour, countYellowRightDisks, countRedRightDisks, sameColor);
         }
     }
+}*/
+
+function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
+    const sameColor = {val : true};
+    let counter = 1;
+    for (let step = 1; step <= 2; ++step) {
+        for (let i = column; sameColor.val == true; i += counter) {
+            let circle = document.getElementById('circle' + (row * 10 + i) + '');
+            if (i - 1 >= 1 || i + 1 <= 7) {
+                let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
+                compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
+            }
+        }
+    }
 }
 
 function orizontalCross(row, column) {
     let totalYellowDisks = 0, totalRedDisks = 0;
-    const countRedLeftDisks = {val: 0}, countRedRightDisks = {val: 0}, countYellowLeftDisks = {val: 0}, countYellowRightDisks = {val: 0};
-    fromLeftToRight(row, column, countYellowLeftDisks, countRedLeftDisks);
-    fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks);
-    totalYellowDisks = countYellowLeftDisks.val + countYellowRightDisks.val;
-    totalRedDisks = countRedLeftDisks.val + countRedRightDisks.val;
+    //const countRedLeftDisks = {val: 0}, countRedRightDisks = {val: 0}, countYellowLeftDisks = {val: 0}, countYellowRightDisks = {val: 0};
+    const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
+    verifyOrizontal(row, column, countYellowDisks, countRedDisks);
+    //fromLeftToRight(row, column, countYellowLeftDisks, countRedLeftDisks);
+    //fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks);
+    //totalYellowDisks = countYellowLeftDisks.val + countYellowRightDisks.val;
+    //totalRedDisks = countRedLeftDisks.val + countRedRightDisks.val;
     outputCondition(totalYellowDisks, totalRedDisks);
 }
 
