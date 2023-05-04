@@ -57,7 +57,7 @@ function outputCondition(countYellowDisks, countRedDisks) {
 
 function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val: true};
-    let count1 = 1, count2 = 1;
+    let count1 = 1, count2 = 1, array = [];
     for (let step = 1; step <= 4; ++step) {
         let exists = true;
         console.log(step);
