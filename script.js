@@ -71,7 +71,7 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
                 exists = false;
             }
         }
-        console.log(countYellowDisks + ' ' + countRedDisks);
+        console.log(countYellowDisks.val + ' ' + countRedDisks.val);
         if (step % 2 != 0) {
             count2 = -1;
         } else {
