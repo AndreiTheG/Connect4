@@ -46,10 +46,10 @@ function compare(currentDisk, neighbour, nrYellowDisks, nrRedDisks, sameColor) {
 }
 
 function outputCondition(countYellowDisks, countRedDisks) {
-    if (countYellowDisks.val == 3) {
+    if (countYellowDisks.val >= 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
-    } else if (countRedDisks.val == 3) {
+    } else if (countRedDisks.val >= 3) {
         document.getElementById('message').innerHTML = 'The player with red disks has won!';
         disableOnclick();
     }
@@ -93,7 +93,7 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
         console.log(yellow2.val + ' ' + red2.val);
         console.log(yellow3.val + ' ' + red3.val);
         console.log(yellow4.val + ' ' + red4.val);
-        if (yellow1.val + yellow4 == 3 || red1.val + red4.val == 3 || yellow2.val + yellow3.val == 3 || red2.val + red3.val == 3) {
+        if (yellow1.val + yellow4 >= 3 || red1.val + red4.val >= 3 || yellow2.val + yellow3.val >= 3 || red2.val + red3.val >= 3) {
             diagonalFound = true;
         }
         if (step % 2 != 0) {
@@ -194,7 +194,7 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
         }
         countYellowDisks.val = rightYellowDisks.val + leftYellowDisks.val;
         countRedDisks.val = rightRedDisks.val +  leftRedDisks.val;
-        if (countYellowDisks.val == 3 || countYellowDisks.val  == 3) {
+        if (countYellowDisks.val >= 3 || countYellowDisks.val  >= 3) {
             counterFound = true;
         }
         if (step % 2 != 0) {
