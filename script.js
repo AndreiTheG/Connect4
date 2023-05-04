@@ -95,11 +95,11 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
         console.log(yellow4.val + ' ' + red4.val);
         if (yellow1.val + yellow4.val >= 3 || red1.val + red4.val >= 3) {
             countYellowDisks.val = yellow1.val + yellow4.val;
-            countRedDisks.val = yellow1.val + yellow4.val;
+            countRedDisks.val = red1.val + red4.val;
             diagonalFound = true;
         } else if (yellow2.val + yellow3.val >= 3 || red2.val + red3.val >= 3) {
             countYellowDisks.val = yellow2.val + yellow3.val;
-            countRedDisks.val = yellow2.val + yellow3.val;
+            countRedDisks.val = red2.val + red3.val;
             diagonalFound = true;
         }
         if (step % 2 != 0) {
