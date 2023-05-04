@@ -61,7 +61,7 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     const array = {val : [0, 0, 0, 0]};
     for (let step = 1; step <= 4; ++step) {
         let exists = true;
-        console.log(step);
+        console.log('Pas' + step);
         //console.log(count1 + ' ' + count2);
         for (let i = row, j = column; exists == true && sameColor.val == true; i += count1, j += count2) {
             console.log(i + ' ' + j);
