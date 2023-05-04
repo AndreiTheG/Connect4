@@ -82,7 +82,6 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
                 let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
                 compare(circle, neighbour, yellow4, red4, sameColor);
             } else {
-                console.log('Fals');
                 exists = false;
             }
         }
