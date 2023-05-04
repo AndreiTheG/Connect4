@@ -62,8 +62,9 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     for (let step = 1; step <= 4; ++step) {
         let exists = true;
         console.log(step);
+        console.log(count1 + ' ' + count2);
         for (let i = row, j = column; exists == true && sameColor.val == true; i += count1, j += count2) {
-            console.log(i + ' ' + j);
+            //console.log(i + ' ' + j);
             let circle = document.getElementById('circle' + (i * 10 + j) + '');
             if (i + 1 <= 6 && i - 1 >= 1 && j + 1 <= 7 && j - 1 >= 1) {
                 let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
@@ -72,7 +73,7 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
                 exists = false;
             }
         }
-        console.log(countYellowDisks.val + ' ' + countRedDisks.val);
+        //console.log(countYellowDisks.val + ' ' + countRedDisks.val);
         if (step % 2 != 0) {
             count2 = -1;
         } else {
