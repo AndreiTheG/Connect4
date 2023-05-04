@@ -162,6 +162,7 @@ function diagonalCross(row, column) {
     const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
     //console.log(row + ' ' + column);
     verifyDiagonal(row, column, countYellowDisks, countRedDisks);
+    console.log(countYellowDisks + ' ' + countRedDisks);
     /*fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
     fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
     fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks);
