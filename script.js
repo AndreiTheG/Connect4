@@ -183,6 +183,7 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
 function orizontalCross(row, column) {
     const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
     verifyOrizontal(row, column, countYellowDisks, countRedDisks);
+    console.log(countYellowDisks.val + ' ' + countRedDisks.val);
     outputCondition(countYellowDisks, countRedDisks);
 }
 
