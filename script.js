@@ -47,7 +47,6 @@ function compare(currentDisk, neighbour, nrYellowDisks, nrRedDisks, sameColor) {
 
 
 function outputCondition(countYellowDisks, countRedDisks) {
-    console.log(countYellowDisks.val + ' ' + countRedDisks.val);
     if (countYellowDisks.val == 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
@@ -161,7 +160,6 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
     for (let step = 1; step <= 2 && counterFound == false; ++step) {
         sameColor = {val : true}
         let exists = true;
-        console.log(step + ' ' + counter + ' ' + exists + ' ' + sameColor.val);
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
             if ((i + 1 <= 7 && counter == 1) /*|| (i - 1 >= 1 && counter == -1)*/) {
@@ -188,7 +186,6 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
 function orizontalCross(row, column) {
     const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
     verifyOrizontal(row, column, countYellowDisks, countRedDisks);
-    console.log(countYellowDisks.val + ' ' + countRedDisks.val);
     outputCondition(countYellowDisks, countRedDisks);
 }
 
