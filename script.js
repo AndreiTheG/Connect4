@@ -182,6 +182,7 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
     let counter = 1;
     for (let step = 1; step <= 2; ++step) {
         for (let i = column; sameColor.val == true; i += counter) {
+            console.log(i);
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
             if (i - 1 >= 1 || i + 1 <= 7) {
                 console.log("True");
