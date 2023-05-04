@@ -56,14 +56,12 @@ function outputCondition(countYellowDisks, countRedDisks) {
 }
 
 function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
-   
     let count1 = 1, count2 = 1, diagonalFound = false;
     const yellow1 = {val: 0}, red1 = {val: 0}, yellow2 = {val: 0}, red2 = {val: 0}, yellow3 = {val: 0}, red3 = {val: 0}, yellow4 = {val: 0}, red4 = {val: 0};
     for (let step = 1; step <= 4 && diagonalFound == false; ++step) {
         const sameColor = {val: true};
         let exists = true;
         console.log('Pas' + step);
-        //console.log(count1 + ' ' + count2);
         for (let i = row, j = column; exists == true && sameColor.val == true; i += count1, j += count2) {
             console.log(i + ' ' + j);
             let circle = document.getElementById('circle' + (i * 10 + j) + '');
@@ -71,7 +69,6 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
                 console.log('Adevarat1');
                 let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
                 compare(circle, neighbour, yellow1, red1, sameColor);
-                //console.log(yellow1.val + ' ' + red1.val);
             } else if (i + 1 <= 6 && j - 1 >= 1 && count1 == 1 && count2 == -1) {
                 console.log('Adevarat2');
                 let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
@@ -89,10 +86,6 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
                 exists = false;
             }
         }
-        console.log(yellow1.val + ' ' + red1.val);
-        console.log(yellow2.val + ' ' + red2.val);
-        console.log(yellow3.val + ' ' + red3.val);
-        console.log(yellow4.val + ' ' + red4.val);
         if (yellow1.val + yellow4.val >= 3 || red1.val + red4.val >= 3) {
             countYellowDisks.val = yellow1.val + yellow4.val;
             countRedDisks.val = red1.val + red4.val;
@@ -112,74 +105,10 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     }
 }
 
-/*function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks) {
-    const sameColor = {val: true};
-    for (let i = row, j = column; i <= 6 && j >= 1 && sameColor.val == true; ++i, --j) {
-        let circle = document.getElementById('circle' + (i * 10 + j) + '');
-        if (i + 1 <= 6 && j - 1 >= 1) {
-            let neighbour = document.getElementById('circle' + ((i + 1) * 10 + (j - 1)) + '');
-            compare(circle, neighbour, countYellowSouthWestDisks, countRedSouthWestDisks, sameColor);
-        }
-    }
-} 
-
-function fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks) {
-    const sameColor = {val: true};
-    for (let i = row, j = column; i >= 1 && j <= 7 && sameColor.val == true; --i, ++j) {
-        let circle = document.getElementById('circle' + (i * 10 + j) + '');
-        if (i - 1 >= 1 && j + 1 <= 7) {
-            let neighbour = document.getElementById('circle' + ((i - 1) * 10 + (j + 1)) + '');
-            compare(circle, neighbour, countYellowNorthEastDisks, countRedNorthEastDisks, sameColor);
-        }
-    }
-}
-
-function fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks) {
-    const sameColor = {val: true};
-    for (let i = row, j = column; i <= 6 && j <= 7 && sameColor.val == true; ++i, ++j) {
-        let circle = document.getElementById('circle' + (i * 10 + j) + '');
-        if (i + 1 <= 6 && j + 1 <= 7) {
-            let neighbour = document.getElementById('circle' + ((i + 1) * 10 + (j + 1)) + '');
-            compare(circle, neighbour, countYellowSouthEastDisks, countRedSouthEastDisks, sameColor);
-        }
-    }
-}
-
-function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks) {
-    const sameColor = {val: true};
-    for (let i = row, j = column; i >= 1 && j >= 1 && sameColor.val == true; --i, --j) {
-        let circle = document.getElementById('circle' + (i * 10 + j) + '');
-        if (i - 1 >= 1 && j - 1 >= 1) {
-            let neighbour = document.getElementById('circle' + ((i - 1) * 10 + (j - 1)) + '');
-            compare(circle, neighbour, countYellowNorthWestDisks, countRedNorthWestDisks, sameColor);
-        }
-    }
-}*/
-
 function diagonalCross(row, column) {
-    //const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
-    //const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
     const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
-    //console.log(row + ' ' + column);
     verifyDiagonal(row, column, countYellowDisks, countRedDisks);
     outputCondition(countYellowDisks, countRedDisks);
-    //console.log(countYellowDisks.val + ' ' + countRedDisks.val);
-    /*fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
-    fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
-    fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks);
-    fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks);
-    let totalRedDisks = 0, totalYellowDisks = 0;
-    if (countYellowSouthWestDisks.val + countYellowNorthEastDisks.val == 3) {
-        totalYellowDisks = countYellowSouthWestDisks.val + countYellowNorthEastDisks.val;
-    } else if (countYellowNorthWestDisks.val + countYellowSouthEastDisks.val == 3) {
-        totalYellowDisks = countYellowNorthWestDisks.val + countYellowSouthEastDisks.val;
-    }
-    if (countRedSouthWestDisks.val + countRedNorthEastDisks.val == 3) {
-        totalRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
-    } else if (countRedNorthWestDisks.val + countRedSouthEastDisks.val == 3) {
-        totalRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;
-    }
-    outputCondition(totalYellowDisks, totalRedDisks);*/
 }
 
 function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
@@ -190,7 +119,7 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
         let exists = true;
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
-            if ((i + 1 <= 7 && counter == 1) /*|| (i - 1 >= 1 && counter == -1)*/) {
+            if (i + 1 <= 7 && counter == 1) {
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, rightYellowDisks, rightRedDisks, sameColor);
             } else if (i - 1 >= 1 && counter == -1) {
