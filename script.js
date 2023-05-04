@@ -163,22 +163,16 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
         console.log(step + ' ' + counter + ' ' + exists + ' ' + sameColor.val);
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
-            console.log('Column ' + i);
             if ((i + 1 <= 7 && counter == 1) /*|| (i - 1 >= 1 && counter == -1)*/) {
-                console.log("True1");
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, rightYellowDisks, rightRedDisks, sameColor);
             } else if (i - 1 >= 1 && counter == -1) {
-                console.log("True2");
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, leftYellowDisks, leftRedDisks, sameColor);
             } else {
-                console.log('False');
                 exists = false;
             }
         }
-        console.log('Red: ' + rightRedDisks.val + ' ' +  leftRedDisks.val);
-        console.log('Yellow: ' + rightYellowDisks.val + ' ' + leftYellowDisks.val);
         if (rightYellowDisks.val + leftYellowDisks.val == 3 ||  rightRedDisks.val +  leftRedDisks.val == 3) {
             counterFound = true;
         }
@@ -191,7 +185,7 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
 function orizontalCross(row, column) {
     const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
     verifyOrizontal(row, column, countYellowDisks, countRedDisks);
-    //console.log(countYellowDisks.val + ' ' + countRedDisks.val);
+    console.log(countYellowDisks.val + ' ' + countRedDisks.val);
     outputCondition(countYellowDisks, countRedDisks);
 }
 
