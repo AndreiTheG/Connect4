@@ -76,6 +76,14 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
                 console.log('Adevarat2');
                 array[step] += 1;
                 console.log(array.val[step]);
+            }  else if (i - 1 >= 1 && j + 1 <= 7 && count1 == -1 && count2 == 1) {
+                console.log('Adevarat3');
+                array[step] += 1;
+                console.log(array.val[step]);
+            } else if (i - 1 >= 1 && j - 1 >= 1 && count1 == -1 && count2 == -1) {
+                console.log('Adevarat4');
+                array[step] += 1;
+                console.log(array.val[step]);
             } else {
                 console.log('Fals');
                 exists = false;
