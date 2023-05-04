@@ -186,16 +186,17 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
             console.log(i);
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
             if (i + 1 <= 7 && counter == 1 && i - 1 >= 1) {
-                console.log("True");
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
             } else if (i - 1 >= 1 && counter == -1) {
-                console.log("False");
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
             } else {
                 exists = false;
             }
+        }
+        if (countYellowDisks.val == 3 || countRedDisks == 3) {
+            console.log("Adevarat");
         }
         if (step % 2 != 0) {
             counter = -1;
