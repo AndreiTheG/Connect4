@@ -159,7 +159,7 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
     let counter = 1, counterFound = false;
     for (let step = 1; step <= 2 && counterFound == false; ++step) {
         let exists = true;
-        console.log(step);
+        console.log(step + ' ' + counter);
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
             if ((i + 1 <= 7 && counter == 1) /*|| (i - 1 >= 1 && counter == -1)*/) {
