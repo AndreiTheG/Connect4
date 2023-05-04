@@ -154,29 +154,6 @@ function diagonalCross(row, column) {
     outputCondition(totalYellowDisks, totalRedDisks);*/
 }
 
-
-/*function fromLeftToRight(row, column, countYellowLeftDisks, countRedLeftDisks) {
-    const sameColor = {val: true};
-    for (let i = column; i <= 7 && sameColor.val == true; ++i) {
-        let circle = document.getElementById('circle' + (row * 10 + i) + '');
-        if (i + 1 <= 7) {
-            let neighbour = document.getElementById('circle' + (row * 10 + (i + 1)) + '');
-            compare(circle, neighbour, countYellowLeftDisks, countRedLeftDisks, sameColor);
-        }
-    }
-}
-
-function fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks) {
-    const sameColor = {val: true};
-    for (let i = column; i >= 1 && sameColor.val == true; --i) {
-        let circle = document.getElementById('circle' + (row * 10 + i) + '');
-        if (i - 1 >= 1) {
-            let neighbour = document.getElementById('circle' + (row * 10 + (i - 1)) + '');
-            compare(circle, neighbour, countYellowRightDisks, countRedRightDisks, sameColor);
-        }
-    }
-}*/
-
 function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val : true};
     let counter = 1, counterFound = false;
