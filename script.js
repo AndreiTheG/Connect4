@@ -76,11 +76,11 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
             }  else if (i - 1 >= 1 && j + 1 <= 7 && count1 == -1 && count2 == 1) {
                 console.log('Adevarat3');
                 let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
-                compare(circle, neighbour, yellow3, red3, sameColor);
+                compare(circle, neighbour, yellow2, red2, sameColor);
             } else if (i - 1 >= 1 && j - 1 >= 1 && count1 == -1 && count2 == -1) {
                 console.log('Adevarat4');
                 let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
-                compare(circle, neighbour, yellow4, red4, sameColor);
+                compare(circle, neighbour, yellow1, red1, sameColor);
             } else {
                 exists = false;
             }
