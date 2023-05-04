@@ -67,11 +67,15 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
             console.log(i + ' ' + j);
             let circle = document.getElementById('circle' + (i * 10 + j) + '');
             if (i + 1 <= 6 && j + 1 <= 7 && count1 == 1 && count2 == 1) {
-                console.log('Adevarat');
+                console.log('Adevarat1');
                 array[step] += 1;
                 console.log(array.val[step]);
                 //let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
                 //compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
+            } else if (i + 1 <= 6 && j - 1 >= 1 && count1 == 1 && count2 == -1) {
+                console.log('Adevarat2');
+                array[step] += 1;
+                console.log(array.val[step]);
             } else {
                 console.log('Fals');
                 exists = false;
