@@ -56,7 +56,7 @@ function outputCondition(countYellowDisks, countRedDisks) {
     }
 }
 
-function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
+/*function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val: true};
     let count1 = 1, count2 = 1;
     for (let step = 1; step <= 4; ++step) {
@@ -84,7 +84,7 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
             count2 = aux;
         }
     }
-}
+}*/
 
 /*function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks) {
     const sameColor = {val: true};
