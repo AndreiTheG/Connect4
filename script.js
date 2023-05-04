@@ -56,7 +56,29 @@ function outputCondition(countYellowDisks, countRedDisks) {
     }
 }
 
-function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks) {
+function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
+    const sameColor = {val: true};
+    let count1 = 1, count2 = 1;
+    for (let step = 1; step <= 4; ++step) {
+        for (let i = row, j = column; sameColor.val == true; i += count1, j += count2) {
+            let circle = document.getElementById('circle' + (i * 10 + j) + '');
+            if (i + 1 <= 6 && i - 1 >= 1 && j + 1 <= 7 && j - 1 >= 1) {
+                let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
+                compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
+            }
+        }
+        console.log(countYellowDisks + ' ' + countRedDisks);
+        if (step % 2 != 0) {
+            count2 = -1;
+        } else {
+            let aux = count1;
+            count1 = count2;
+            count2 = aux;
+        }
+    }
+}
+
+/*function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks) {
     const sameColor = {val: true};
     for (let i = row, j = column; i <= 6 && j >= 1 && sameColor.val == true; ++i, --j) {
         let circle = document.getElementById('circle' + (i * 10 + j) + '');
@@ -65,7 +87,7 @@ function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countR
             compare(circle, neighbour, countYellowSouthWestDisks, countRedSouthWestDisks, sameColor);
         }
     }
-}
+} 
 
 function fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks) {
     const sameColor = {val: true};
@@ -98,16 +120,18 @@ function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countR
             compare(circle, neighbour, countYellowNorthWestDisks, countRedNorthWestDisks, sameColor);
         }
     }
-}
+}*/
 
 function diagonalCross(row, column) {
-    const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
-    const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
-    fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
+    //const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
+    //const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
+    const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
+    verifyDiagonal(row, column, countYellowDisks, countRedDisks);
+    /*fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
     fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
     fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks);
-    fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks);
-    let totalRedDisks = 0, totalYellowDisks = 0;
+    fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks);*/
+    /*let totalRedDisks = 0, totalYellowDisks = 0;
     if (countYellowSouthWestDisks.val + countYellowNorthEastDisks.val == 3) {
         totalYellowDisks = countYellowSouthWestDisks.val + countYellowNorthEastDisks.val;
     } else if (countYellowNorthWestDisks.val + countYellowSouthEastDisks.val == 3) {
@@ -117,8 +141,8 @@ function diagonalCross(row, column) {
         totalRedDisks = countRedSouthWestDisks.val + countRedNorthEastDisks.val;
     } else if (countRedNorthWestDisks.val + countRedSouthEastDisks.val == 3) {
         totalRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;
-    }
-    outputCondition(totalYellowDisks, totalRedDisks);
+    }*/
+    //outputCondition(totalYellowDisks, totalRedDisks);
 }
 
 
