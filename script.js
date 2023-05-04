@@ -45,7 +45,6 @@ function compare(currentDisk, neighbour, nrYellowDisks, nrRedDisks, sameColor) {
     }
 }
 
-
 function outputCondition(countYellowDisks, countRedDisks) {
     if (countYellowDisks.val == 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
@@ -56,7 +55,7 @@ function outputCondition(countYellowDisks, countRedDisks) {
     }
 }
 
-/*function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
+function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val: true};
     let count1 = 1, count2 = 1;
     for (let step = 1; step <= 4; ++step) {
@@ -84,7 +83,7 @@ function outputCondition(countYellowDisks, countRedDisks) {
             count2 = aux;
         }
     }
-}*/
+}
 
 /*function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks) {
     const sameColor = {val: true};
@@ -133,9 +132,9 @@ function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countR
 function diagonalCross(row, column) {
     //const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
     //const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
-    //const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
+    const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
     //console.log(row + ' ' + column);
-    //verifyDiagonal(row, column, countYellowDisks, countRedDisks);
+    verifyDiagonal(row, column, countYellowDisks, countRedDisks);
     /*fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
     fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
     fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks);
