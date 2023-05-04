@@ -56,7 +56,7 @@ function outputCondition(countYellowDisks, countRedDisks) {
     }
 }
 
-/*function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
+function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val: true};
     let count1 = 1, count2 = 1;
     for (let step = 1; step <= 4; ++step) {
@@ -76,9 +76,9 @@ function outputCondition(countYellowDisks, countRedDisks) {
             count2 = aux;
         }
     }
-}*/
+}
 
-function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks) {
+/*function fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks) {
     const sameColor = {val: true};
     for (let i = row, j = column; i <= 6 && j >= 1 && sameColor.val == true; ++i, --j) {
         let circle = document.getElementById('circle' + (i * 10 + j) + '');
@@ -120,14 +120,14 @@ function fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countR
             compare(circle, neighbour, countYellowNorthWestDisks, countRedNorthWestDisks, sameColor);
         }
     }
-}
+}*/
 
 function diagonalCross(row, column) {
-    const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
-    const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
-    //const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
-    //verifyDiagonal(row, column, countYellowDisks, countRedDisks);
-    fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
+    //const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
+    //const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
+    const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
+    verifyDiagonal(row, column, countYellowDisks, countRedDisks);
+    /*fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
     fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
     fromNorthWestToSouthEast(row, column, countYellowSouthEastDisks, countRedSouthEastDisks);
     fromSouthEastToNorthWest(row, column, countYellowNorthWestDisks, countRedNorthWestDisks);
@@ -142,7 +142,7 @@ function diagonalCross(row, column) {
     } else if (countRedNorthWestDisks.val + countRedSouthEastDisks.val == 3) {
         totalRedDisks = countRedNorthWestDisks.val + countRedSouthEastDisks.val;
     }
-    outputCondition(totalYellowDisks, totalRedDisks);
+    outputCondition(totalYellowDisks, totalRedDisks);*/
 }
 
 
