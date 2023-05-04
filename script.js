@@ -179,8 +179,8 @@ function fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks)
 
 function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val : true};
-    let counter = 1;
-    for (let step = 1; step <= 2; ++step) {
+    let counter = 1, counterFound = false;
+    for (let step = 1; step <= 2 && counterFound == false; ++step) {
         let exists = true;
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
             console.log(i);
@@ -195,8 +195,8 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
                 exists = false;
             }
         }
-        if (countYellowDisks.val == 3 || countRedDisks == 3) {
-            console.log("Adevarat");
+        if (countYellowDisks.val == 3 || countRedDisks.val == 3) {
+            counterFound = true;
         }
         if (step % 2 != 0) {
             counter = -1;
