@@ -87,8 +87,8 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
         }
         console.log(yellow1.val + ' ' + red1.val);
         console.log(yellow2.val + ' ' + red2.val);
-        console.log(yellow3.val + ' ' + red3.val);
-        console.log(yellow4.val + ' ' + red4.val);
+        //console.log(yellow3.val + ' ' + red3.val);
+        //console.log(yellow4.val + ' ' + red4.val);
         if (yellow1.val + yellow4.val >= 3 || red1.val + red4.val >= 3) {
             countYellowDisks.val = yellow1.val + yellow4.val;
             countRedDisks.val = red1.val + red4.val;
