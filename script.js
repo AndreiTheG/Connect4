@@ -47,6 +47,7 @@ function compare(currentDisk, neighbour, nrYellowDisks, nrRedDisks, sameColor) {
 
 
 function outputCondition(countYellowDisks, countRedDisks) {
+    console.log(countYellowDisks.val + ' ' + countRedDisks.val);
     if (countYellowDisks.val == 3) {
         document.getElementById('message').innerHTML = 'The player with yellow disks has won!';
         disableOnclick();
