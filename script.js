@@ -155,9 +155,10 @@ function diagonalCross(row, column) {
 }
 
 function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
-    const sameColor = {val : true}, leftYellowDisks = {val : 0}, rightYellowDisks = {val : 0}, leftRedDisks = {val : 0}, rightRedDisks = {val : 0};
+    const leftYellowDisks = {val : 0}, rightYellowDisks = {val : 0}, leftRedDisks = {val : 0}, rightRedDisks = {val : 0};
     let counter = 1, counterFound = false;
     for (let step = 1; step <= 2 && counterFound == false; ++step) {
+        sameColor = {val : true}
         let exists = true;
         console.log(step + ' ' + counter + ' ' + exists + ' ' + sameColor.val);
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
