@@ -173,7 +173,9 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
                 exists = false;
             }
         }
-        if (rightYellowDisks.val + leftYellowDisks.val == 3 ||  rightRedDisks.val +  leftRedDisks.val == 3) {
+        countYellowDisks.val = rightYellowDisks.val + leftYellowDisks.val;
+        countRedDisks = rightRedDisks.val +  leftRedDisks.val;
+        if (countYellowDisks == 3 || countYellowDisks  == 3) {
             counterFound = true;
         }
         if (step % 2 != 0) {
