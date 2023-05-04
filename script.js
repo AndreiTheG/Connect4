@@ -174,8 +174,8 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
             }
         }
         countYellowDisks.val = rightYellowDisks.val + leftYellowDisks.val;
-        countRedDisks = rightRedDisks.val +  leftRedDisks.val;
-        if (countYellowDisks == 3 || countYellowDisks  == 3) {
+        countRedDisks.val = rightRedDisks.val +  leftRedDisks.val;
+        if (countYellowDisks.val == 3 || countYellowDisks.val  == 3) {
             counterFound = true;
         }
         if (step % 2 != 0) {
