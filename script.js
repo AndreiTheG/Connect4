@@ -196,7 +196,6 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
             }
         }
         if (countYellowDisks.val == 3 || countRedDisks.val == 3) {
-            console.log("Adevarat");
             counterFound = true;
         }
         if (step % 2 != 0) {
