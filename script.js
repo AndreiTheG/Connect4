@@ -177,8 +177,8 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
                 exists = false;
             }
         }
-        //console.log('Red: ' + rightRedDisks.val + ' ' +  leftRedDisks.val);
-        //console.log('Yellow: ' + rightYellowDisks.val + ' ' + leftYellowDisks.val);
+        console.log('Red: ' + rightRedDisks.val + ' ' +  leftRedDisks.val);
+        console.log('Yellow: ' + rightYellowDisks.val + ' ' + leftYellowDisks.val);
         if (rightYellowDisks.val + leftYellowDisks.val == 3 ||  rightRedDisks.val +  leftRedDisks.val == 3) {
             counterFound = true;
         }
