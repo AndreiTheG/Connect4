@@ -206,15 +206,9 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
 }
 
 function orizontalCross(row, column) {
-    let totalYellowDisks = 0, totalRedDisks = 0;
-    //const countRedLeftDisks = {val: 0}, countRedRightDisks = {val: 0}, countYellowLeftDisks = {val: 0}, countYellowRightDisks = {val: 0};
     const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
     verifyOrizontal(row, column, countYellowDisks, countRedDisks);
-    //fromLeftToRight(row, column, countYellowLeftDisks, countRedLeftDisks);
-    //fromRightToLeft(row, column, countYellowRightDisks, countRedRightDisks);
-    //totalYellowDisks = countYellowLeftDisks.val + countYellowRightDisks.val;
-    //totalRedDisks = countRedLeftDisks.val + countRedRightDisks.val;
-    outputCondition(totalYellowDisks, totalRedDisks);
+    outputCondition(countYellowDisks, countRedDisks);
 }
 
 function verticalCross(row, column) {
