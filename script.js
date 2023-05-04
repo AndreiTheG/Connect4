@@ -155,22 +155,24 @@ function diagonalCross(row, column) {
 }
 
 function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
-    const sameColor = {val : true};
+    const sameColor = {val : true}, leftYellowDisks = {val : 0}, rightYellowDisks = {val : 0}, leftRedDisks = {val : 0}, rightRedDisks = {val : 0};
     let counter = 1, counterFound = false;
     for (let step = 1; step <= 2 && counterFound == false; ++step) {
         let exists = true;
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
-            if ((i + 1 <= 7 && counter == 1) || (i - 1 >= 1 && counter == -1)) {
+            if ((i + 1 <= 7 && counter == 1) /*|| (i - 1 >= 1 && counter == -1)*/) {
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
-                compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
-            } /*else if (i - 1 >= 1 && counter == -1) {
+                compare(circle, neighbour, rightYellowDisks, rightRedDisks, sameColor);
+            } else if (i - 1 >= 1 && counter == -1) {
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
-                compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
-            }*/ else {
+                compare(circle, neighbour, leftYellowDisks, leftRedDisks, sameColor);
+            } else {
                 exists = false;
             }
         }
+        console.log('Red: ' + rightRedDisks + ' ' +  leftRedDisks);
+        console.log('Yellow: ' + rightYellowDisks + ' ' + leftYellowDisks);
         if (countYellowDisks.val == 3 || countRedDisks.val == 3) {
             counterFound = true;
         }
