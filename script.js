@@ -60,6 +60,7 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val: true};
     let count1 = 1, count2 = 1;
     for (let step = 1; step <= 4; ++step) {
+
         for (let i = row, j = column; sameColor.val == true; i += count1, j += count2) {
             console.log(i + ' ' + j);
             let circle = document.getElementById('circle' + (i * 10 + j) + '');
@@ -127,6 +128,7 @@ function diagonalCross(row, column) {
     //const countRedSouthWestDisks = {val: 0}, countRedNorthEastDisks = {val: 0}, countYellowSouthWestDisks = {val: 0}, countYellowNorthEastDisks = {val: 0};
     //const countRedNorthWestDisks = {val: 0}, countRedSouthEastDisks = {val: 0}, countYellowNorthWestDisks = {val: 0}, countYellowSouthEastDisks = {val: 0};
     const countYellowDisks = {val : 0}, countRedDisks = {val : 0};
+    console.log(row + ' ' + column);
     verifyDiagonal(row, column, countYellowDisks, countRedDisks);
     /*fromNorthEastToSouthWest(row, column, countYellowSouthWestDisks, countRedSouthWestDisks);
     fromSouthWestToNorthEast(row, column, countYellowNorthEastDisks, countRedNorthEastDisks);
