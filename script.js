@@ -188,6 +188,9 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
                 console.log("True");
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
+            } else if (i - 1 >= 1 && counter == -1) {
+                let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
+                compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
             }
         }
         if (step % 2 != 0) {
