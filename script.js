@@ -58,7 +58,7 @@ function outputCondition(countYellowDisks, countRedDisks) {
 function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val: true};
     let count1 = 1, count2 = 1;
-    const array = {val : [0, 0, 0, 0, 0]};
+    const yellowArray = {val : [0, 0, 0, 0, 0]}, redArray = {val : [0, 0, 0, 0, 0]};
     for (let step = 1; step <= 4; ++step) {
         let exists = true;
         console.log('Pas' + step);
@@ -68,28 +68,26 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
             let circle = document.getElementById('circle' + (i * 10 + j) + '');
             if (i + 1 <= 6 && j + 1 <= 7 && count1 == 1 && count2 == 1) {
                 console.log('Adevarat1');
-                array.val[step] += 1;
-                console.log(array.val[step]);
-                //let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
-                //compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
+                let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
+                compare(circle, neighbour, yellowArray[step], redArray[step], sameColor);
             } else if (i + 1 <= 6 && j - 1 >= 1 && count1 == 1 && count2 == -1) {
                 console.log('Adevarat2');
-                array.val[step] += 1;
-                console.log(array.val[step]);
+                let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
+                compare(circle, neighbour, yellowArray[step], redArray[step], sameColor);
             }  else if (i - 1 >= 1 && j + 1 <= 7 && count1 == -1 && count2 == 1) {
                 console.log('Adevarat3');
-                array.val[step] += 1;
-                console.log(array.val[step]);
+                let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
+                compare(circle, neighbour, yellowArray[step], redArray[step], sameColor);
             } else if (i - 1 >= 1 && j - 1 >= 1 && count1 == -1 && count2 == -1) {
                 console.log('Adevarat4');
-                array.val[step] += 1;
-                console.log(array.val[step]);
+                let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
+                compare(circle, neighbour, yellowArray[step], redArray[step], sameColor);
             } else {
                 console.log('Fals');
                 exists = false;
             }
         }
-        //console.log(countYellowDisks.val + ' ' + countRedDisks.val);
+        console.log(yellowArray.val[step] + ' ' + redArray.val[step]);
         if (step % 2 != 0) {
             count2 = -1;
         } else {
