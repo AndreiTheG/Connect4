@@ -69,7 +69,7 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
             if (i + 1 <= 6 && i - 1 >= 1 && j + 1 <= 7 && j - 1 >= 1) {
                 console.log('Adevarat');
                 array[step] += 1;
-                console.log(array[step]);
+                console.log(array.val[step]);
                 //let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
                 //compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
             } else {
