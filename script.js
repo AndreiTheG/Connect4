@@ -184,11 +184,14 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
         for (let i = column; sameColor.val == true; i += counter) {
             console.log(i);
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
-            if (i - 1 >= 1 || i + 1 <= 7) {
+            if (i + 1 <= 7 && counter == 1) {
                 console.log("True");
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
             }
+        }
+        if (step % 2 != 0) {
+            counter = -1;
         }
     }
 }
