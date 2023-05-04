@@ -181,7 +181,8 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
     const sameColor = {val : true};
     let counter = 1;
     for (let step = 1; step <= 2; ++step) {
-        for (let i = column; sameColor.val == true; i += counter) {
+        let exists = true;
+        for (let i = column; sameColor.val == true && exists == true; i += counter) {
             console.log(i);
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
             if (i + 1 <= 7 && counter == 1 && i - 1 >= 1) {
@@ -192,6 +193,8 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
                 console.log("False");
                 let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                 compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
+            } else {
+                exists = false;
             }
         }
         if (step % 2 != 0) {
