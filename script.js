@@ -122,13 +122,15 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
         let exists = true;
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
-            if (i + 1 <= 7 && counter == 1) {
-                let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
-                compare(circle, neighbour, rightYellowDisks, rightRedDisks, sameColor);
-            } else if (i - 1 >= 1 && counter == -1) {
-                let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
-                compare(circle, neighbour, leftYellowDisks, leftRedDisks, sameColor);
-            } else {
+            if (verifyCoodonates(i, j) == true) {
+                if (i + 1 <= 7 && counter == 1) {
+                    let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
+                    compare(circle, neighbour, rightYellowDisks, rightRedDisks, sameColor);
+                } else if (i - 1 >= 1 && counter == -1) {
+                    let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
+                    compare(circle, neighbour, leftYellowDisks, leftRedDisks, sameColor);
+                } 
+            }  else {
                 exists = false;
             }
         }
