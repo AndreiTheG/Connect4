@@ -155,9 +155,11 @@ function verticalCross(row, column) {
     const sameColor = {val: true}, countYellowDisks = {val: 0}, countRedDisks = {val: 0};
     for (let i = row; i <= 6 && sameColor.val == true; ++i) {
         let circle = document.getElementById('circle' + (i * 10 + column) + '');
-        if (i + 1 <= 6) {
-            let neighbour = document.getElementById('circle' + ((i + 1) * 10 + column) + '');
-            compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
+        if (verifyCoodonates(i, j) == true) {
+            if (i + 1 <= 6) {
+                let neighbour = document.getElementById('circle' + ((i + 1) * 10 + column) + '');
+                compare(circle, neighbour, countYellowDisks, countRedDisks, sameColor);
+            }
         }
     }
     outputCondition(countYellowDisks, countRedDisks);
