@@ -64,7 +64,7 @@ function verifyCoodonates(row, column) {
 
 function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     let count1 = 1, count2 = 1, diagonalFound = false;
-    const yellow1 = {val: 0}, red1 = {val: 0}, yellow2 = {val: 0}, red2 = {val: 0}, yellow3 = {val: 0}, red3 = {val: 0}, yellow4 = {val: 0}, red4 = {val: 0};
+    const yellow1 = {val: 0}, red1 = {val: 0}, yellow2 = {val: 0}, red2 = {val: 0};
     for (let step = 1; step <= 4 && diagonalFound == false; ++step) {
         const sameColor = {val: true};
         let exists = true;
