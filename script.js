@@ -122,7 +122,7 @@ function verifyOrizontal(row, column, countYellowDisks, countRedDisks) {
         let exists = true;
         for (let i = column; sameColor.val == true && exists == true; i += counter) {
             let circle = document.getElementById('circle' + (row * 10 + i) + '');
-            if (verifyCoodonates(i, j) == true) {
+            if (verifyCoodonates(row, i) == true) {
                 if (i + 1 <= 7 && counter == 1) {
                     let neighbour = document.getElementById('circle' + (row * 10 + (i + counter)) + '');
                     compare(circle, neighbour, rightYellowDisks, rightRedDisks, sameColor);
