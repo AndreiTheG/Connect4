@@ -55,6 +55,13 @@ function outputCondition(countYellowDisks, countRedDisks) {
     }
 }
 
+function verifyCoodonates(row, column) {
+    if ((row + 1 <= 6 && column + 1 <= 7) || (row - 1 >= 1 && column - 1 >= 1) || (row + 1 <= 6 && column - 1 >= 1) || (row - 1 >= 1 && column + 1 <= 7)) {
+        return true;
+    }
+    return false;
+}
+
 function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
     let count1 = 1, count2 = 1, diagonalFound = false;
     const yellow1 = {val: 0}, red1 = {val: 0}, yellow2 = {val: 0}, red2 = {val: 0}, yellow3 = {val: 0}, red3 = {val: 0}, yellow4 = {val: 0}, red4 = {val: 0};
@@ -63,7 +70,7 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
         let exists = true;
         for (let i = row, j = column; exists == true && sameColor.val == true; i += count1, j += count2) {
             let circle = document.getElementById('circle' + (i * 10 + j) + '');
-            if ((i + 1 <= 6 && j + 1 <= 7 && count1 == 1 && count2 == 1) || (i - 1 >= 1 && j - 1 >= 1 && count1 == -1 && count2 == -1)) {
+            if ((verifyCoodonates(i, j) == true/*i + 1 <= 6 && j + 1 <= 7*/ && count1 == 1 && count2 == 1) || (verifyCoodonates(i, j) == true && count1 == -1 && count2 == -1)) {
                 let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
                 compare(circle, neighbour, yellow1, red1, sameColor);
             } else if ((i + 1 <= 6 && j - 1 >= 1 && count1 == 1 && count2 == -1) || (i - 1 >= 1 && j + 1 <= 7 && count1 == -1 && count2 == 1)) {
