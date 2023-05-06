@@ -86,11 +86,11 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
             countYellowDisks.val = yellow1.val;
             countRedDisks.val = red1.val;
             diagonalFound = true;
-        } else if (yellow2.val >= 3 || red2.val >= 3) {
+        } /*else if (yellow2.val >= 3 || red2.val >= 3) {
             countYellowDisks.val = yellow2.val;
             countRedDisks.val = red2.val;
             diagonalFound = true;
-        }
+        }*/
         if (step % 2 != 0) {
             count2 = -1;
         } else {
