@@ -75,7 +75,6 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
                 if (step == 1 || step == 4) {    
                     compare(circle, neighbour, yellow1, red1, sameColor);
                 } else if ((step == 2 || step == 3)) {
-                    //let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
                     compare(circle, neighbour, yellow2, red2, sameColor);
                 }
             } else {
