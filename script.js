@@ -71,13 +71,13 @@ function verifyDiagonal(row, column, countYellowDisks, countRedDisks) {
         for (let i = row, j = column; exists == true && sameColor.val == true; i += count1, j += count2) {
             let circle = document.getElementById('circle' + (i * 10 + j) + '');
             if (verifyCoodonates(i, j) == true) {
-                if ((i + 1 <= 6 && j + 1 <= 7 && count1 == 1 && count2 == 1) || (i - 1 >= 1 && j - 1 >= 1 && count1 == -1 && count2 == -1)) {
+               // if ((i + 1 <= 6 && j + 1 <= 7 && count1 == 1 && count2 == 1) || (i - 1 >= 1 && j - 1 >= 1 && count1 == -1 && count2 == -1)) {
                     let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
-                    compare(circle, neighbour, yellow1, red1, sameColor);
-                } else if ((i + 1 <= 6 && j - 1 >= 1 && count1 == 1 && count2 == -1) || (i - 1 >= 1 && j + 1 <= 7 && count1 == -1 && count2 == 1)) {
-                    let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
-                    compare(circle, neighbour, yellow2, red2, sameColor);
-                }
+                    //compare(circle, neighbour, yellow1, red1, sameColor);
+                //} else if ((i + 1 <= 6 && j - 1 >= 1 && count1 == 1 && count2 == -1) || (i - 1 >= 1 && j + 1 <= 7 && count1 == -1 && count2 == 1)) {
+                //    let neighbour = document.getElementById('circle' + ((i + count1) * 10 + (j + count2)) + '');
+                    //compare(circle, neighbour, yellow2, red2, sameColor);
+                //}
             } else {
                 exists = false;
             }
