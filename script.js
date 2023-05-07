@@ -158,7 +158,7 @@ function verifyVertical(row, column, countYellowDisks, countRedDisks) {
 
 function verticalCross(row, column) {
     const countYellowDisks = {val: 0}, countRedDisks = {val: 0};
-    verifyVertical(row, column, countYellowDisks, countRedDisks)
+    verifyVertical(row, column, countYellowDisks, countRedDisks);
     outputCondition(countYellowDisks, countRedDisks);
 }
 
