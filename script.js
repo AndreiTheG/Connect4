@@ -143,8 +143,8 @@ function orizontalCross(row, column) {
     outputCondition(countYellowDisks, countRedDisks);
 }
 
-function verticalCross(row, column) {
-    const sameColor = {val: true}, countYellowDisks = {val: 0}, countRedDisks = {val: 0};
+function verifyVertical(row, column, countYellowDisks, countRedDisks) {
+    const sameColor = {val: true};
     for (let i = row; i <= 6 && sameColor.val == true; ++i) {
         let circle = document.getElementById('circle' + (i * 10 + column) + '');
         if (verifyCoodonates(i, column) == true) {
@@ -154,6 +154,11 @@ function verticalCross(row, column) {
             }
         }
     }
+}
+
+function verticalCross(row, column) {
+    const countYellowDisks = {val: 0}, countRedDisks = {val: 0};
+    verifyVertical(row, column, countYellowDisks, countRedDisks)
     outputCondition(countYellowDisks, countRedDisks);
 }
 
